@@ -20,11 +20,11 @@ console.log(replacement2);
 
 //RegEx Primer
 var searchString3 = "technology    book is the best technology book but not technologybook";
-var match3 = /technology\s+book/;  //RegEx: '/' start of RegEx, 'technology' matches 'technology', '\s+' matches a single white space character (\s) one or more times (+), 'book' matches only 'book', '/' end of a RegEx
+var match3 = /technology\s+book/g;  //RegEx: '/' start of RegEx, 'technology' matches 'technology', '\s+' matches a single white space character (\s) one or more times (+), 'book' matches only 'book', '/' end of a RegEx
 
-//search() method
-var result = searchString3.search(match3);
-console.log(result);
+var replacement3 = searchString3.replace(match3, "nothing");
+console.log(replacement3);
+
 
 
 
