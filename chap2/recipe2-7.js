@@ -25,9 +25,15 @@ var hexArray = decArray.map(function(element) {
 console.log(hexArray); 	// (6) ["17", "ff", "7a", "5", "10", "63"]
 
 
+
+
 var old = [1, 2, 3, 4, 5];
+
 var add2 = old.map(function(element) {
 	return element + 2;
 });
 
-console.log(add2);
+console.log(add2);	// (5) [3, 4, 5, 6, 7]
+
+// map() method doesn't change original array
+console.log(old);		// (5) [1, 2, 3, 4, 5]  
