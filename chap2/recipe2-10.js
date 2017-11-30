@@ -1,6 +1,6 @@
 // ASSOCIATIVE ARRAYS/HASHES
 
-// Associate array elemArray to store elements
+// Associative array elemArray to store elements
 var elemArray = new Object(); // Create an OBJECT rather than an array
 var elem = document.forms[0].elements[0];
 elemArray[elem.id] = elem.value;
@@ -12,7 +12,7 @@ Object.keys(elemArray).forEach(function(key) {
 });
 
 
-// With Associate Arrays, the array index is a string representing a keyword (STRING KEYS), mapping the string to a given value.
+// With Associative Arrays, the array index is a string representing a keyword (STRING KEYS), mapping the string to a given value.
 // Associative arrays have named indexes rather than numeric indexes like normal arrays, but JavaScript doesn't support arrays with named indexes
 
 // associateArray["key"] = value
