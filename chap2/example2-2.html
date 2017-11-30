@@ -1,0 +1,60 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Associative Arrays: Example 2-2</title>
+    </head>
+    <body>
+			<form id="picker">
+				<label>Value 1: </label>
+				<input type="text" id="first" /><br/>
+				<label>Value 2: </label>
+				<input type="text" id="second" /><br/>
+				<label>Value 3: </label>
+				<input type="text" id="third" /><br/>
+				<label>Value 4: </label>
+				<input type="text" id="fourth" /><br/>
+				<button id="validate">Validate</button>
+			</form>
+			<div id="result"></div>
+
+			<script>
+				//get the form element names and values, and validate
+				document.getElementById("validate").addEventListener("click", function(event) {
+					// prevents action of the button element's from happening
+					event.preventDefault();
+					// CREATE ARRAY OF ELEMENT KEY/VALUES
+					// gets all elements of "picker" element into an associative array "elems"
+					var elems = document.getElementById("picker").elements;
+
+					// console.log(elems);  //(5) [input#first, input#second, input#third, input#fourth, button#validate,
+
+					// create "elemArray" as an Object
+					var elemArray = new Object();
+
+					for (var i = 0; i < elems.length; i++) {
+						if (elems[i].type === "text") {
+							// finds elem's type === "text"
+							// elemArray uses the id of each elem as its index = the value of each elem
+							elemArray[elems[i].id] = elems[i].value;
+
+							// console.log(elemArray[elems[i].id]);   // inputed values of user
+						}
+					}
+
+					// console.log(Object.keys(elemArray)); // (4) ["first", "second", "third", "fourth"]
+					var str = "";
+					// Object.keys() method on elemArray creates an array of its keys
+					// Iterate over the array using a combination of keys() and forEach() methods
+					Object.keys(elemArray).forEach(function(key) {
+						// console.log(key); // first, second, third, fourth
+						// value = each elemArray's value for each key
+						var value = elemArray[key];
+						// creates output on HTML page
+						str += key + "->" + value + "<br/>";
+					});
+
+					document.getElementById("result").innerHTML = str;
+				}, false);
+			</script>
+    </body>
+</html>
