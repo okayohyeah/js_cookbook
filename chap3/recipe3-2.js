@@ -1,3 +1,4 @@
+//3.2 Passing a Function As an Argument to Another Function
 var reverseArray = function(x,indx,str) {
   return indx == 0 ? str : 
                  reverseArray(x,--indx,(str+= " " + x[indx]));
